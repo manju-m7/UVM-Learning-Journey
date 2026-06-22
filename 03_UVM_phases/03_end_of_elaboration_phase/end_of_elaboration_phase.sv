@@ -31,12 +31,21 @@ class my_env extends uvm_env;
   endfunction
 
   // End of elaboration phase executes after
-  // build and connect phases are completed
+  // hierarchy construction and connections are complete
   function void end_of_elaboration_phase(uvm_phase phase);
     super.end_of_elaboration_phase(phase);
 
     // Display end of elaboration phase execution
     $display("Inside end_of_elaboration_phase of my_env");
+  endfunction
+
+  // Start of simulation phase executes just before
+  // runtime simulation begins
+  function void start_of_simulation_phase(uvm_phase phase);
+    super.start_of_simulation_phase(phase);
+
+    // Display start of simulation phase execution
+    $display("Inside start_of_simulation_phase of my_env");
   endfunction
 
 endclass
@@ -79,7 +88,7 @@ class my_test extends uvm_test;
   endfunction
 
   // End of elaboration phase executes after
-  // hierarchy construction is completed
+  // hierarchy construction is complete
   function void end_of_elaboration_phase(uvm_phase phase);
     super.end_of_elaboration_phase(phase);
 
@@ -90,7 +99,17 @@ class my_test extends uvm_test;
     uvm_top.print_topology();
   endfunction
 
+  // Start of simulation phase executes just before
+  // the run phase begins
+  function void start_of_simulation_phase(uvm_phase phase);
+    super.start_of_simulation_phase(phase);
+
+    // Display start of simulation phase execution
+    $display("Inside start_of_simulation_phase of my_test");
+  endfunction
+
 endclass
+
 
 module tb;
 
