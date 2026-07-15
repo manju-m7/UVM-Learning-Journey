@@ -92,14 +92,3 @@ uvm_test_top
 
 ---
 
-## Files
-
-- `testbench.sv` - Source code for the example
-- `nonblocking_put_imp.png` - Simulation output screenshot
-- `README.md` - Concept explanation and observations
-
----
-
-## Reference
-
-- :contentReference[oaicite:1]{index=1}
