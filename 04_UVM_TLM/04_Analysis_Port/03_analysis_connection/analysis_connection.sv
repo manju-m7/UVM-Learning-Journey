@@ -104,7 +104,6 @@ class my_test extends uvm_test;
 
 endclass
 
-
 module tb;
 
   initial begin
